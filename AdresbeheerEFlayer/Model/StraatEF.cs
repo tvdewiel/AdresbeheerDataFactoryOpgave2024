@@ -14,6 +14,14 @@ namespace AdresbeheerEFlayer.Model
         {
         }
 
+        public StraatEF(int id, string straatnaam, int gemeenteNIScode, GemeenteEF gemeente)
+        {
+            Id = id;
+            Straatnaam = straatnaam;
+            GemeenteNIScode = gemeenteNIScode;
+            Gemeente = gemeente;
+        }
+
         public int Id { get; set; }
         [Required]
         [Column(TypeName ="nvarchar(250)")]

@@ -18,15 +18,17 @@ namespace ConsoleAppTestRepos
                 case "EFCore": repos = AdresbeheerDatalayerFactory.GeefRepositories(connectionString, RepositoryType.EFCore); break;
                 case "ADO": repos = AdresbeheerDatalayerFactory.GeefRepositories(connectionString, RepositoryType.ADO); break;
             }
-            //Gemeente g = new Gemeente(20009, "Gent");
+            Gemeente g = new Gemeente(20089, "Brugge");
+            Straat s=new Straat("Rozenstraat",g);
+            repos.StraatRepository.VoegStraatToe(s);
             //repos.GemeenteRepository.VoegGemeenteToe(g);
             //g = new Gemeente(20005, "Waregem");
-            var x = repos.GemeenteRepository.GeefGemeente(20009);
-            //repos.GemeenteRepository.VerwijderGemeente(20007);
-            x.ZetGemeentenaam("Gr Gent");
-            repos.GemeenteRepository.UpdateGemeente(x);
-            x.ZetGemeentenaam("Klein Gent");
-            repos.GemeenteRepository.UpdateGemeente(x);
+            //var x = repos.GemeenteRepository.GeefGemeente(20009);
+            ////repos.GemeenteRepository.VerwijderGemeente(20007);
+            //x.ZetGemeentenaam("Gr Gent");
+            //repos.GemeenteRepository.UpdateGemeente(x);
+            //x.ZetGemeentenaam("Klein Gent");
+            //repos.GemeenteRepository.UpdateGemeente(x);
         }
     }
 }

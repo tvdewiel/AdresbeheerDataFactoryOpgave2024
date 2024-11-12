@@ -2,6 +2,7 @@
 using AdresbeheerDomain.Model;
 using AdresbeheerEFlayer.Exceptions;
 using AdresbeheerEFlayer.Mappers;
+using AdresbeheerEFlayer.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,16 @@ namespace AdresbeheerEFlayer.Repositories
         {
             this.ctx = new AdresbeheerContext(connectionString);
         }
-
+        private void SaveAndClear()
+        {
+            ctx.SaveChanges();
+            ctx.ChangeTracker.Clear();
+        }
         public Straat GeefStraat(int id)
         {
             try
             {
-                return null;
+                return MapStraat.MapToDomain(ctx.Straat.Where(x=>x.Id==id).Include(x=>x.Gemeente).AsNoTracking().FirstOrDefault());
             }
             catch (Exception ex)
             {
@@ -101,7 +106,10 @@ namespace AdresbeheerEFlayer.Repositories
         {
             try
             {
-               //
+                StraatEF s = MapStraat.MapToDB(straat,ctx);
+                ctx.Straat.Add(s);
+                SaveAndClear();
+                straat.ZetID(s.Id);
                 return straat;
             }
             catch (Exception ex)
