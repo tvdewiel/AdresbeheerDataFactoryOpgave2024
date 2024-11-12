@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AdresbeheerDomain.Model.Adres">
+    <Position X="7.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAVgBAEgAAAgAgCAACABIAAAAAAAAAAQiA=</HashCode>
+      <FileName>Model\Adres.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Straat" />
+      <Property Name="Locatie" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AdresbeheerDomain.Model.Adreslocatie">
+    <Position X="10" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAIAGAAAAAAAAYAA=</HashCode>
+      <FileName>Model\Adreslocatie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdresbeheerDomain.Model.Gemeente">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAgAEAACAAAAAIAAAAAAAAAAAiA=</HashCode>
+      <FileName>Model\Gemeente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdresbeheerDomain.Model.Straat">
+    <Position X="5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAQAAAAAgIAEgAAAAAAAAAAABIAAAAAAAAAACiA=</HashCode>
+      <FileName>Model\Straat.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Gemeente" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
